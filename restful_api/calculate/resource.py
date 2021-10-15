@@ -14,7 +14,7 @@ class CalculateResource(Resource):
         parser.add_argument('data', type=FileStorage, location="files")
         args = parser.parse_args()
         
-        df = pd.read_csv(args['data'])        
+        df = pd.read_csv(args['data'])
         df = df.transpose()
         df.rename(columns=df.iloc[0], inplace=True)
         df = df.drop(df.index[0])
