@@ -1,0 +1,14 @@
+server:
+  name: "calc_csv"
+  version: "1.0.0"
+  host: "0.0.0.0"
+  port: "5020"
+  protocol: "http"
+  maxlogs: 100000000
+  processes: 2
+  project_dir: "calc_csv"
+
+settings:
+  timezone: "Asia/Seoul"
+  log_dir: "logs"
+  history_dir: "history"
