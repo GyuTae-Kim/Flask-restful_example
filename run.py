@@ -26,7 +26,7 @@ api = flask_restful.Api(app, errors=errors)
 
 # set app & api
 add_views(api)
-#connect_exception(app)
+connect_exception(app)
 
 # main
 if __name__ == '__main__':
