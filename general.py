@@ -5,9 +5,10 @@ import yaml
 from flask.helpers import make_response
 
 
+# functions
 def mkdir(path):
     if os.path.exists(path):
-        if not os.isdir(os.path.exists):
+        if not os.path.isdir(path):
             os.mkdir(path)
     else:
         os.mkdir(path)

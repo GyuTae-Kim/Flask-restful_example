@@ -5,7 +5,6 @@
 # https://github.com/tomasrasymas/flask-restful-api-template
 ####################################################################################
 
-import yaml
 import argparse
 
 from flask import Flask
@@ -18,8 +17,8 @@ from restful_api.utils.handlers import connect_exception
 
 # functions
 def init_mkdir(environment):
-    mkdir(environment['history_dir'])
-    mkdir(environment['log_dir'])
+    mkdir(environment['settings']['history_dir'])
+    mkdir(environment['settings']['log_dir'])
 
 # load Flask app & api
 app = Flask(__name__)
@@ -27,14 +26,13 @@ api = flask_restful.Api(app, errors=errors)
 
 # set app & api
 add_views(api)
-connect_exception(app)
+#connect_exception(app)
 
 # main
 if __name__ == '__main__':
     # argument
     parser = argparse.ArgumentParser()
-    parser.add_argument()
-    parser.add_argument('--environment', type=str, default='settings/environments.yaml', help='enter the environment file path')
+    parser.add_argument('--environment', type=str, default='settings/environment.yaml', help='enter the environment file path')
     opt, _ = parser.parse_known_args()
     
     # set environment
